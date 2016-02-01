@@ -22,7 +22,7 @@ public prefix func |(var constraints: [VFLConstraint]) -> [VFLConstraint] {
     }
 
     let superview = Superview(mode: .Head)
-    let constraint = SuperviewConstraint(superview: superview, view: constraints.first!.source as UIView)
+    let constraint = SuperviewConstraint(superview: superview, view: constraints.first!.source as! UIView)
     constraints.insert(constraint, atIndex: 0)
     return constraints
 }
@@ -51,7 +51,7 @@ public postfix func |(var constraints: [VFLConstraint]) -> [VFLConstraint] {
     }
 
     let superview = Superview(mode: .Tail)
-    let constraint = SuperviewConstraint(superview: superview, view: constraints.last!.target as UIView)
+    let constraint = SuperviewConstraint(superview: superview, view: constraints.last!.target as! UIView)
     constraints.append(constraint)
     return constraints
 }
@@ -70,7 +70,7 @@ public func -(superview: Superview, var constraints: [VFLConstraint]) -> [VFLCon
         return []
     }
 
-    let constraint = SuperviewConstraint(superview: superview, view: constraints.first!.source as UIView)
+    let constraint = SuperviewConstraint(superview: superview, view: constraints.first!.source as! UIView)
     constraints.insert(constraint, atIndex: 0)
     return constraints
 }
@@ -88,7 +88,7 @@ public func -(var constraints: [VFLConstraint], superview: Superview) -> [VFLCon
         return []
     }
 
-    let constraint = SuperviewConstraint(superview: superview, view: constraints.last!.target as UIView)
+    let constraint = SuperviewConstraint(superview: superview, view: constraints.last!.target as! UIView)
     constraints.append(constraint)
     return constraints
 }
@@ -155,10 +155,10 @@ public func -(var partial: ([VFLConstraint], Sibling), view: [UILayoutSupport]) 
     return partial.0
 }
 
-public func -(partial: ([VFLConstraint], Sibling), var constraints: [VFLConstraint]) -> [VFLConstraint] {
+public func -(partial: ([VFLConstraint], Sibling), constraints: [VFLConstraint]) -> [VFLConstraint] {
     let constraint = SiblingConstraint(sibling: partial.1, item: constraints.first!.source)
     var result = partial.0
     result.append(constraint)
-    result.extend(constraints)
+    result.appendContentsOf(constraints)
     return result
 }

@@ -23,28 +23,28 @@ class SiblingTests: XCTestCase {
     func testHorizontalPredicatedSiblings() {
         let constant = 10
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:[view1]-(>=constant)-[view2])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1]-(>=constant)-[view2]", options: nil, metrics: ["constant" : constant], views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1]-(>=constant)-[view2]", options: [], metrics: ["constant" : constant], views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testVerticalPredicatedSiblings() {
         let constant = -3
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:[view1]-(<=constant)-[view2])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1]-(<=constant)-[view2]", options: nil, metrics: ["constant" : constant], views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1]-(<=constant)-[view2]", options: [], metrics: ["constant" : constant], views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testHorizontalPredicatedSiblingsWithConstraintList() {
         let constant: Float = 10
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:[view1]-(>=constant)-[view2][view3])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1]-(>=constant)-[view2][view3]", options: nil, metrics: ["constant" : constant], views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1]-(>=constant)-[view2][view3]", options: [], metrics: ["constant" : constant], views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testVerticalPredicatedSiblingsWithConstraintList() {
         let constant = -M_PI
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:[view1]-(<=constant)-[view2][view3])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1]-(<=constant)-[view2][view3]", options: nil, metrics: ["constant" : constant], views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1]-(<=constant)-[view2][view3]", options: [], metrics: ["constant" : constant], views: views)
         AssertConstraintsEqual(constraints, check)
     }
     

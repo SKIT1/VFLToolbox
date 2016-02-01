@@ -9,11 +9,15 @@ public class Expression {
     public var multiplier: CGFloat = 1
     public var constant: CGFloat = 0
 
-    private init(){}
+    private init(){
+       self.source = nil
+    }
     init(constant: CGFloat) {
+        self.source = nil
         self.constant = constant
     }
     init(multiplier: CGFloat) {
+        self.source = nil
         self.multiplier = multiplier
     }
     init(attribute: Attribute) {

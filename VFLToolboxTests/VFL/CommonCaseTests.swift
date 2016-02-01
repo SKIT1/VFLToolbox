@@ -18,61 +18,61 @@ class CommonCaseTests: XCTestCase {
     
     func testHorizontalLeadingTrailingSuperviewWithView() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:|[view1]|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view1]|", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view1]|", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testVerticalTopBottomSuperviewWithView() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:|[view1]|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|[view1]|", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|[view1]|", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testHorizontalLeadingTrailingSuperviewWithViewAndMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:|-margin-[view1]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testVerticalTopBottomSuperviewWithViewAndMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:|-margin-[view1]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testHorizontalLeadingTrailingSuperviewWithConstraintList() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:|[view1][view2]|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view1][view2]|", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view1][view2]|", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testVerticalTopBottomSuperviewWithConstraintList() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:|[view1][view2]|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|[view1][view2]|", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|[view1][view2]|", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testHorizontalLeadingTrailingSuperviewWithConstraintListAndMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:|-margin-[view1][view2]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1][view2]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1][view2]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testVerticalTopBottomSuperviewWithConstraintListAndMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:|-margin-[view1][view2]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1][view2]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1][view2]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testHorizontalLeadingTrailingSuperviewWithConstraintListAndInBetweenMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:|-margin-[view1]-margin-[view2]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1]-margin-[view2]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:|-margin-[view1]-margin-[view2]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     
     func testVerticalTopBottomSuperviewWithConstraintListAndInBetweenMargin() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:|-margin-[view1]-margin-[view2]-margin-|)
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1]-margin-[view2]-margin-|", options: nil, metrics: metrics, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:|-margin-[view1]-margin-[view2]-margin-|", options: [], metrics: metrics, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     

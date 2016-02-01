@@ -19,25 +19,25 @@ class SubscriptTests: XCTestCase {
 
     func testTwoHorizontalViewsSubscript() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:[view1][view2])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1][view2]", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1][view2]", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testThreeHorizontalViewsSubscript() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(H:[view1][view2][view3])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1][view2][view3]", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("H:[view1][view2][view3]", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testTwoVerticalViewsSubscript() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:[view1][view2])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1][view2]", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1][view2]", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
 
     func testThreeVerticalViewsSubscript() {
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(V:[view1][view2][view3])
-        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1][view2][view3]", options: nil, metrics: nil, views: views)
+        let check = NSLayoutConstraint.constraintsWithVisualFormat("V:[view1][view2][view3]", options: [], metrics: nil, views: views)
         AssertConstraintsEqual(constraints, check)
     }
     

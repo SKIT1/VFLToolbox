@@ -36,7 +36,7 @@ public class SuperviewConstraint: VFLConstraint {
         super.init(target: target, source: source)
     }
 
-    override public func UIKitRepresentation(_ direction: Direction = .Horizontal) -> NSLayoutConstraint! {
+    override public func UIKitRepresentation(direction: Direction = .Horizontal) -> NSLayoutConstraint! {
         let attribute = mode.NSLayoutAttributeRepresentation(direction)
         return NSLayoutConstraint(
             item: target,

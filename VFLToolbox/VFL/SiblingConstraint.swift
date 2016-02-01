@@ -27,7 +27,7 @@ public class SiblingConstraint : VFLConstraint {
         super.init(target: item, source: sibling.item)
     }
 
-    override public func UIKitRepresentation(_ direction: Direction = .Horizontal) -> NSLayoutConstraint! {
+    override public func UIKitRepresentation(direction: Direction = .Horizontal) -> NSLayoutConstraint! {
         return NSLayoutConstraint(
             item: target,
             attribute: targetAttribute.NSLayoutAttributeRepresentation(direction),

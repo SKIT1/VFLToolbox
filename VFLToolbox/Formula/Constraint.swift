@@ -10,8 +10,8 @@ public class Constraint {
         self.relation = relation
     }
     private func UIKitRepresentation() -> NSLayoutConstraint {
-        var sourceView = expression.source?.view
-        var sourceAttribute = expression.source?.attribute ?? NSLayoutAttribute.NotAnAttribute
+        let sourceView = expression.source?.view
+        let sourceAttribute = expression.source?.attribute ?? NSLayoutAttribute.NotAnAttribute
         return NSLayoutConstraint(
             item: target.view,
             attribute: target.attribute,

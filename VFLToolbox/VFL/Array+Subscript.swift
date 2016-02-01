@@ -24,7 +24,7 @@ public extension Array {
 
         case let constraint as VFLConstraint:
             //NOTE: This is the reason we don't declare VFLConstraint as a protocol
-            var result: [VFLConstraint] = self.map({ return $0 as VFLConstraint })
+            var result: [VFLConstraint] = self.map({ return $0 as! VFLConstraint })
             let sibling = Sibling(item: constraint.target)
             let siblingConstraint = SiblingConstraint(sibling: sibling, item: target)
             result.append(siblingConstraint)
@@ -32,7 +32,7 @@ public extension Array {
 
         //This one is questionable, unfortunately we can't cast to UILayoutSupport as it's not @objc protocol
         case let guide as NSObject:
-            var result: [VFLConstraint] = self.map({ return $0 as VFLConstraint })
+            var result: [VFLConstraint] = self.map({ return $0 as! VFLConstraint })
             let sibling = Sibling(item: guide)
             let constraint = SiblingConstraint(sibling: sibling, item: target)
             result.append(constraint)
