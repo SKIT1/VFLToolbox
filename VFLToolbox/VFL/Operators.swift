@@ -16,7 +16,8 @@ public prefix func |(view: [UIView]) -> [VFLConstraint] {
     return [constraint]
 }
 
-public prefix func |(var constraints: [VFLConstraint]) -> [VFLConstraint] {
+public prefix func |(constraints: [VFLConstraint]) -> [VFLConstraint] {
+    var constraints = constraints
     if constraints.count == 0 {
         return []
     }
@@ -45,7 +46,8 @@ public postfix func |(view: [UIView]) -> [VFLConstraint] {
     return [constraint]
 }
 
-public postfix func |(var constraints: [VFLConstraint]) -> [VFLConstraint] {
+public postfix func |(constraints: [VFLConstraint]) -> [VFLConstraint] {
+    var constraints = constraints
     if constraints.count == 0 {
         return []
     }
@@ -65,7 +67,8 @@ public func -(superview: Superview, view: [UIView]) -> [VFLConstraint] {
     return [constraint]
 }
 
-public func -(superview: Superview, var constraints: [VFLConstraint]) -> [VFLConstraint] {
+public func -(superview: Superview, constraints: [VFLConstraint]) -> [VFLConstraint] {
+    var constraints = constraints
     if constraints.count == 0 {
         return []
     }
@@ -83,9 +86,10 @@ public func -(view: [UIView], superview: Superview) -> [VFLConstraint] {
     return [constraint]
 }
 
-public func -(var constraints: [VFLConstraint], superview: Superview) -> [VFLConstraint] {
+public func -(constraints: [VFLConstraint], superview: Superview) -> [VFLConstraint] {
+    var constraints = constraints
     if constraints.count == 0 {
-        return []
+         return []
     }
 
     let constraint = SuperviewConstraint(superview: superview, view: constraints.last!.target as! UIView)
@@ -128,7 +132,8 @@ public func -(sibling: Sibling, view: [UILayoutSupport]) -> [VFLConstraint] {
     return [constraint]
 }
 
-public func -(sibling: Sibling, var constraints: [VFLConstraint]) -> [VFLConstraint] {
+public func -(sibling: Sibling, constraints: [VFLConstraint]) -> [VFLConstraint] {
+    var constraints = constraints
     if constraints.count == 0 {
         return []
     }
@@ -137,7 +142,8 @@ public func -(sibling: Sibling, var constraints: [VFLConstraint]) -> [VFLConstra
     return constraints
 }
 
-public func -(var partial: ([VFLConstraint], Sibling), view: [UIView]) -> [VFLConstraint] {
+public func -( partial: ([VFLConstraint], Sibling), view: [UIView]) -> [VFLConstraint] {
+    var partial = partial
     if view.count == 0 {
         assert(false, "You should specify a view")
     }
@@ -146,7 +152,8 @@ public func -(var partial: ([VFLConstraint], Sibling), view: [UIView]) -> [VFLCo
     return partial.0
 }
 
-public func -(var partial: ([VFLConstraint], Sibling), view: [UILayoutSupport]) -> [VFLConstraint] {
+public func -(partial: ([VFLConstraint], Sibling), view: [UILayoutSupport]) -> [VFLConstraint] {
+    var partial = partial
     if view.count == 0 {
         assert(false, "You should specify a view")
     }
